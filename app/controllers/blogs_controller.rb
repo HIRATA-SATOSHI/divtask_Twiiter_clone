@@ -61,6 +61,10 @@ class BlogsController < ApplicationController
     end
   end
 
+  def confirm
+    @blog = Blog.new(blog_params)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_blog
