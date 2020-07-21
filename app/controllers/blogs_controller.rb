@@ -25,20 +25,21 @@ class BlogsController < ApplicationController
   # POST /blogs.json
   def create
     @blog = Blog.new(blog_params)
-
-    respond_to do |format|
-      if @blog.save
-        format.html { redirect_to @blog, notice: 'Blog was successfully created.' }
-        format.json { render :show, status: :created, location: @blog }
-      else
-        format.html { render :new }
-        format.json { render json: @blog.errors, status: :unprocessable_entity }
-      end
+    if params[:back]
+      render :new
+    else
+      respond_to do |format|
+        if @blog.save
+          format.html { redirect_to @blog, notice: 'Blog was successfully created.' }
+          format.json { render :show, status: :created, location: @blog }
+        else
+          format.html { render :new }
+          format.json { render json: @blog.errors, status: :unprocessable_entity }
+        end
+      end  
     end
   end
 
-  # PATCH/PUT /blogs/1
-  # PATCH/PUT /blogs/1.json
   def update
     respond_to do |format|
       if @blog.update(blog_params)
@@ -63,16 +64,16 @@ class BlogsController < ApplicationController
 
   def confirm
     @blog = Blog.new(blog_params)
+    render :new if @blog.invalid?
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_blog
-      @blog = Blog.find(params[:id])
-    end
-
-    # Only allow a list of trusted parameters through.
-    def blog_params
-      params.require(:blog).permit(:content)
-    end
+    
+  def set_blog
+    @blog = Blog.find(params[:id])
+  end
+ 
+  def blog_params
+    params.require(:blog).permit(:content)
+  end
 end
