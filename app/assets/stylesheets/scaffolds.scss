@@ -1,16 +1,26 @@
 body {
-  background-color: #fff;
-  color: #333;
+  background: linear-gradient(-225deg, #2CD8D5 0%, #C5C1FF 56%, #FFBAC3 100%);
+  color: white;
   margin: 33px;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
+  text-align: center;
 }
 
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
+  text-align: center;
+}
+.title {
+  font-size: x-large;
+  font-style: bold;
+}
+
+.show {
+  font-size: 20px;
 }
 
 pre {
@@ -20,15 +30,16 @@ pre {
 }
 
 a {
-  color: #000;
+  color: black;
 
-  &:visited {
-    color: #666;
-  }
+  // &:visited {
+  //   color: #666;
+  // }
 
   &:hover {
     color: #fff;
-    background-color: #000;
+    // background-color: #000;
+    opacity: 0.4;
   }
 }
 
@@ -63,6 +74,7 @@ div {
   margin-bottom: 20px;
   background-color: #f0f0f0;
 
+
   h2 {
     text-align: left;
     font-weight: bold;
@@ -79,6 +91,50 @@ div {
   }
 }
 
+ul {
+  list-style: none;
+}
+
 label {
   display: block;
+}
+.navbar {
+  font-family: verdana, arial, helvetica, sans-serif;
+  text-align: center;
+  color: whitesmoke;
+  top: 0;
+  margin-bottom: 30px;
+}
+
+.navbar-brand {
+  font-size: 55px;
+}
+
+.form-inline {
+  color: #999999;
+  position: absolute;
+  float: right;
+  right: 0; /* 右寄せ */
+} 
+
+// .title {
+//   text-align: center;
+// }
+
+.row {
+  text-align: center;
+}
+
+.btn-group {
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+}
+
+.btn-group btn-group-sm {
+  text-align: center;
+}
+
+.col-md-12 {
+  font-size: 20px;
 }
