@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+<p class= "Show">
   <strong>投稿内容:</strong>
   <%= @blog.content %>
 </p>
 
-<%= link_to 'Edit', edit_blog_path(@blog) %> |
-<%= link_to 'Back', blogs_path %>
+<button type="button" class="btn btn-primary btn-sm"><%= link_to 'Edit', edit_blog_path(@blog) %></buttomn>
+<button type="button" class="btn btn-primary btn-sm"><%= link_to 'Back', blogs_path %></buttomn>
